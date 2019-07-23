@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+
+  bot:
+    image: onebillionquacks
+    restart: on-failure:3
+    build: .
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+  db:
+    restart: always
+    image: redis
+    volumes:
+      - db-data:/data
+
+volumes:
+  # Database persistence
+  db-data:
