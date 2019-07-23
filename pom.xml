@@ -7,10 +7,10 @@
 
     <!-- Document properties -->
     <groupId>com.jarredvardy.quacks</groupId>
-    <artifactId>OneBillionQuacks</artifactId>
+    <artifactId>OneMillionQuacks</artifactId>
     <version>1.0</version>
 
-    <name>OneBillionQuacks</name>
+    <name>OneMillionQuacks</name>
     <url>https://jarredvardy.com/quacks/</url>
 
     <properties>
@@ -160,20 +160,9 @@
             <version>3.8.3_463</version>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>
             <version>5.0.5.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.Arraying</groupId>
-            <artifactId>Gravity</artifactId>
-            <version>master-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
