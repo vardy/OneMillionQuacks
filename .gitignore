@@ -1,11 +1,9 @@
-# Built Binaries
-OneBillionQuacks.jar
-
 # Sensitive files
 .env
 
 # Build files
 target/
+dependency-reduced-pom.xml
 
 # IDE files / directories
 .idea
