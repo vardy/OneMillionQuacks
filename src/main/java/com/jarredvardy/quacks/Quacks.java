@@ -26,6 +26,9 @@ import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.entities.Game;
 
 import javax.security.auth.login.LoginException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public enum Quacks {
 
@@ -59,6 +62,9 @@ public enum Quacks {
         } catch (LoginException | InterruptedException ex) {
             ex.printStackTrace();
         }
+
+        ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
+        exec.scheduleAtFixedRate(() -> updateStatus(Database.INSTANCE.getQuacks()), 0, 60, TimeUnit.SECONDS);
     }
 
     public void updateStatus(int newQuacks) {

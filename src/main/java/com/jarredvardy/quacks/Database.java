@@ -54,10 +54,6 @@ public enum Database {
 
     public void registerQuack() {
         sync.incr("quacks");
-
-        if(getQuacks() % 100 == 0) {
-            Quacks.INSTANCE.updateStatus(getQuacks());
-        }
     }
 
     public int getQuacks() {
