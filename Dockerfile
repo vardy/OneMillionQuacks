@@ -1,8 +1,10 @@
-FROM openjdk:8
+FROM maven:3.6-jdk-8-alpine
 MAINTAINER Jarred Vardy <jarred.vardy@gmail.com>
-ENV ENV docker
 
-COPY OneBillionQuacks.jar /opt/OneBillionQuacks/OneBillionQuacks.jar
-WORKDIR /opt/OneBillionQuacks
+WORKDIR /OneMillionQuacks
+COPY pom.xml .
+RUN mvn -e -B dependency:resolve
+COPY src ./src
+RUN mvn -e -B package
 
-ENTRYPOINT ["java", "-jar", "OneBillionQuacks.jar"]
+ENTRYPOINT ["java", "-jar", "/OneMillionQuacks/target/OneMillionQuacks-1.0.jar"]

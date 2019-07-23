@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   bot:
-    image: onebillionquacks
+    image: onemillionquacks
     restart: on-failure:3
     build: .
     env_file:
