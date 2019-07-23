@@ -1,4 +1,9 @@
+# Sensitive files
+.env
+
+# Build files
+target/
+
+# IDE files / directories
 .idea
 *.iml
-
-target/
