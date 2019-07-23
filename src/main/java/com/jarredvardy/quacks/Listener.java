@@ -38,7 +38,7 @@ public final class Listener extends ListenerAdapter  {
 
         String raw = event.getMessage().getContentRaw();
 
-        if(raw.toLowerCase().equals("quack")) {
+        if(raw.toLowerCase().contains("quack")) {
             Database.INSTANCE.registerQuack();
         }
 
