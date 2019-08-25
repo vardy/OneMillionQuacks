@@ -16,6 +16,13 @@ services:
     image: redis
     volumes:
       - db-data:/data
+  
+  backup:
+    image: pants1/docker-volume-backup:latest
+    env_file:
+     - .env.backup
+    depends_on:
+     - db
 
 volumes:
   # Database persistence
